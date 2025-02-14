@@ -25,5 +25,8 @@ public class DataGenerators {
 
         // Generate recipes
         dataGenerator.addProvider(event.includeServer(), new AEUPRecipeProvider(packOutput, lookupProvider));
+
+        // Generate item models
+        dataGenerator.addProvider(event.includeClient(), new AEUPItemModelProvider(packOutput, existingFileHelper));
     }
 }
