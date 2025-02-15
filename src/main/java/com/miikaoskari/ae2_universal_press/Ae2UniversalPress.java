@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -46,6 +47,10 @@ public class Ae2UniversalPress {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
     public static final DeferredItem<Item> UNIVERSAL_PRESS = ITEMS.registerItem("universal_press", properties -> new ItemUniversalPress(properties));
+
+    public static ResourceLocation makeId(String id) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, id);
+    }
 
     // Creates a creative tab with the id "ae2_universal_press:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> UNIVERSAL_PRESS_TAB = CREATIVE_MODE_TABS.register("universal_press_tab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.ae2_universal_press")).withTabsBefore(CreativeModeTabs.COMBAT).icon(() -> UNIVERSAL_PRESS.get().getDefaultInstance()).displayItems((parameters, output) -> {
