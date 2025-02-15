@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="See GitHub repository for details"
+issueTrackerURL="https://github.com/miikaoskari/ae2-universal-press/issues"
+
+[[mods]]
+modId="ae2_universal_press"
+version="1.0.0"
+displayName="AE2 Universal Press"
+description="Combines the functionality of all the presses in Applied Energistics 2 into one universal press."
+authors="miikaoskari"
+displayURL="https://github.com/miikaoskari/ae2-universal-press"
+
+[[dependencies.ae2_universal_press]]
+modId="neoforge"
+type="REQUIRED"
+versionRange="${neo_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ae2_universal_press]]
+modId="minecraft"
+type="REQUIRED"
+versionRange="${minecraft_version}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ae2_universal_press]]
+modId="ae2"
+type="REQUIRED"
+versionRange="${ae2_version}"
+ordering="NONE"
+side="BOTH"
