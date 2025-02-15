@@ -11,11 +11,12 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class AEUPRecipeProvider extends RecipeProvider {
+public class AEUPRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     public AEUPRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
         super(output, provider);
@@ -29,8 +30,12 @@ public class AEUPRecipeProvider extends RecipeProvider {
                 .requires(AEItems.CALCULATION_PROCESSOR_PRESS)
                 .requires(AEItems.ENGINEERING_PROCESSOR_PRESS)
                 .requires(AEItems.LOGIC_PROCESSOR_PRESS)
-                .requires(AEItems.SILICON_PRESS);
-
+                .requires(AEItems.SILICON_PRESS)
+                .unlockedBy("has_item", has(AEItems.CALCULATION_PROCESSOR_PRESS))
+                .unlockedBy("has_item", has(AEItems.ENGINEERING_PROCESSOR_PRESS))
+                .unlockedBy("has_item", has(AEItems.LOGIC_PROCESSOR_PRESS))
+                .unlockedBy("has_item", has(AEItems.SILICON_PRESS))
+                .save(recipeOutput);
 
 
         // TODO: Inscriber recipes for Universal Press
