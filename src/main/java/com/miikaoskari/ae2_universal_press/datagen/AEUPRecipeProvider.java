@@ -52,6 +52,10 @@ public class AEUPRecipeProvider extends RecipeProvider implements IConditionBuil
         makePrint(recipeOutput, "logic_processor",
                 AEItems.LOGIC_PROCESSOR_PRINT,
                 Ingredient.of(ConventionTags.GOLD_INGOT));
+
+        makePrint(recipeOutput, "silicon",
+                AEItems.SILICON_PRINT,
+                Ingredient.of(ConventionTags.SILICON));
     }
 
     private void makePrint(RecipeOutput consumer,
