@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/miikaoskari/ae2-universal-press/issues"
 
 [[mods]]
 modId="ae2_universal_press"
-version="1.0.0"
+version="1.0.1"
 displayName="AE2 Universal Press"
 description="Combines the functionality of all the presses in Applied Energistics 2 into one universal press."
 authors="miikaoskari"
